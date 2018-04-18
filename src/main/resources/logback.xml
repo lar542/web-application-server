@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration>
 <configuration>
+	<!-- 로그를 출력할 위치, 출력 패턴 지정 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
 			<Pattern>%d{HH:mm:ss.SSS} [%-5level] [%thread] [%logger{36}] - %m%n</Pattern>
 		</layout>
 	</appender>
 	
+	<!-- 최상위 로거 -->
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
 	</root>
+	
+	<!-- 실제 로그 기능을 수행하는 로거 객체. Name 부여 
+		additivity는 상위 로거로부터의 상속 여부. 
+		true(기본값)면 모든 상위 로거들의 설정값을 상속받아 현재 로거에 설정된 값을 재적용.
+		false면 해당 로거는 상위 로거의 설정내용을 상속받지 않음 
+	-->
+	<logger name="" level="" additivity="">
+		
+	</logger>
+	
 </configuration>
